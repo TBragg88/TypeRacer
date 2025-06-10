@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family= Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* Add vertical space above header */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #ff8400;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    border-radius: 0;
+    padding: 32px 24px 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: "Alegreya", serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+}
+
+#instructionsBtn {
+    background: #fff;
+    color: #ff8400;
+    border: 2px solid #ff8400;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: background 0.2s, color 0.2s;
+}
+#instructionsBtn:hover,
+#instructionsBtn:focus {
+    background: #ff8400;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    gap: 32px;
+    padding: 40px 0 0 0;
+    background: #fff;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.test-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 340px;
+    max-width: 480px;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reference-text {
+    background: #fff;
+    border: 2px solid #ff8400;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 1.1rem;
+    min-height: 48px;
+    font-family: "Nunito", Arial, sans-serif;
+    color: #333;
+}
+
+#userInput {
+    width: 100%;
+    max-width: -webkit-fill-available;
+    min-height: 80px;
+    font-size: 1.1rem;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: "Nunito", Arial, sans-serif;
+    resize: vertical;
+    transition: border 0.2s;
+    background: #fafafa;
+}
+#userInput:focus {
+    border: 2px solid #ff8400;
+    outline: none;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+}
+.button-row button {
+    background: #fff;
+    color: #ff8400;
+    border: 2px solid #ff8400;
+    border-radius: 6px;
+    padding: 8px 22px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: background 0.2s, color 0.2s;
+}
+.button-row button:disabled {
+    background: #fff;
+    color: #ffd6a0;
+    border: 2px solid #ffd6a0;
+    cursor: not-allowed;
+}
+.button-row button:not(:disabled):hover,
+.button-row button:not(:disabled):focus {
+    background: #ff8400;
+    color: #fff;
+}
+
+.results-panel {
+    flex: 1;
+    background: #fff7ed;
+    border: 2px solid #ff8400;
+    border-radius: 10px;
+    padding: 18px 22px;
+    min-width: 200px;
+    max-width: 260px;
+    align-self: flex-start;
+    box-shadow: 0 2px 8px rgba(255, 132, 0, 0.06);
+    margin-top: 0;
+}
+.results-panel h2 {
+    font-family: "Alegreya", serif;
+    color: #ff8400;
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+.results-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.results-panel li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+}
+.modal[aria-hidden="false"] {
+    display: flex;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 32px 28px 24px 28px;
+    max-width: 400px;
+    width: 90vw;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #ff8400;
+    cursor: pointer;
+}
+.modal-content h2 {
+    font-family: "Alegreya", serif;
+    color: #ff8400;
+    margin-top: 0;
+}
+.modal-content ul {
+    padding-left: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        margin: 0 auto 0 auto;
+    }
+    main {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 0 0 0;
+        background: #fff;
+        max-width: 98vw;
+    }
+    .results-panel {
+        max-width: -webkit-fill-available;
+        max-width: 480px;
+        width: 100%;
+        margin-top: 12px;
+        align-self: stretch;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 22px 10px 10px 10px;
+        border-radius: 0 0 0 0;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .test-panel {
+        gap: 12px;
+        width: 100%;
+    }
+    .reference-text,
+    #userInput {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .modal-content {
+        padding: 18px 8px 12px 8px;
+    }
+    main {
+        padding: 12px 0 0 0;
+    }
+    .results-panel {
+        max-width: -webkit-fill-available;
+    }
+}

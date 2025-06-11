@@ -10,14 +10,14 @@ h1 {
 }
 
 header {
-    background-color: #ff8400;
+    background-color: #f79732;
     color: white;
 }
 
 /* buttons */
 
 .btn-outline-orange {
-    border: 2px solid #ff8400;
+    border: 2px solid #b9670e;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     margin: 5px;
 }
@@ -38,4 +38,42 @@ header {
 #results-area p {
     font-size: 1.1rem;
     margin-bottom: 5px;
+}
+
+/* shake animation */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-8px);
+    }
+    40% {
+        transform: translateX(8px);
+    }
+    60% {
+        transform: translateX(-8px);
+    }
+    80% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.shake {
+    animation: shake 0.4s;
+}
+
+.correct-word {
+    color: #007bff; /* Bootstrap blue */
+    font-weight: bold;
+}
+.incorrect-word {
+    color: #dc3545; /* Bootstrap red */
+    font-weight: bold;
+}
+.incorrect-letter {
+    color: #dc3545; /* Bootstrap red */
+    font-weight: bold;
 }
